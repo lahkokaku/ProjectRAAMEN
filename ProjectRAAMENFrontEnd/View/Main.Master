@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ProjectRAAMENFrontEnd.View.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div style="display: flex; justify-content: space-between">
+                <span>
+                    <span>
+                        <a href="./HomePage.aspx">Home</a> | 
+                    </span>
+                    <span id="navbarCustomer" runat="server" >
+                        <a href="./OrderRamenPage.aspx">Order Ramen</a> | 
+                        <a href="./TransactionsPage.aspx">Transaction History</a> | 
+                    </span>
+                    <span id="navbarStaff" runat="server" >
+                        <a href="./ManageRamenPage.aspx">Manage Ramen</a> | 
+                        <a href="./OrderQueuePage.aspx">Order Queue</a> | 
+                    </span>
+                    <span id="navbarAdmin" runat="server" >
+                        <a href="./ManageRamenPage.aspx">Manage Ramen</a> | 
+                        <a href="./OrderQueuePage.aspx">Order Queue</a> | 
+                        <a href="./TransactionsPage.aspx">Transaction History</a> | 
+                        <a href="./ReportPage.aspx">Report</a> | 
+                    </span>
+                    <span>
+                        <a href="./ProfilePage">Profile</a>
+                    </span>
+                </span>
+                <span>
+                    <asp:Button Text="Logout" runat="server" ID="btnLogout" OnClick="btnLogout_Click" />
+                </span>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRAAMEN", "ProjectRAAMEN\ProjectRAAMEN.csproj", "{32CD435E-B4CF-415A-9BAC-384245198E74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectRAAMENFrontEnd", "ProjectRAAMENFrontEnd\ProjectRAAMENFrontEnd.csproj", "{B58BF684-1FC3-4B14-8211-59978B86D0E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32CD435E-B4CF-415A-9BAC-384245198E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CD435E-B4CF-415A-9BAC-384245198E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CD435E-B4CF-415A-9BAC-384245198E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CD435E-B4CF-415A-9BAC-384245198E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B58BF684-1FC3-4B14-8211-59978B86D0E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58BF684-1FC3-4B14-8211-59978B86D0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58BF684-1FC3-4B14-8211-59978B86D0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58BF684-1FC3-4B14-8211-59978B86D0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CFB478E-1932-4ECB-8732-40DADBBFB52F}
+	EndGlobalSection
+EndGlobal
