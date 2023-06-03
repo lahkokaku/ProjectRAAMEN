@@ -47,6 +47,7 @@ namespace ProjectRAAMEN.Repository
                 SelectedUser.Username = Username;
                 SelectedUser.Email = Email;
                 SelectedUser.Gender = Gender;
+                db.SaveChanges();
                 return "Successfuly Updated";
             }
             return "User not found";
