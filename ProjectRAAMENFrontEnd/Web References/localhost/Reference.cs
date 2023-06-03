@@ -37,6 +37,8 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback GetUserByIdOperationCompleted;
         
+        private System.Threading.SendOrPostCallback UpdateUserProfileOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -86,6 +88,9 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event GetUserByIdCompletedEventHandler GetUserByIdCompleted;
+        
+        /// <remarks/>
+        public event UpdateUserProfileCompletedEventHandler UpdateUserProfileCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -218,6 +223,41 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateUserProfile", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string UpdateUserProfile(string Username, string Email, string Gender, int Id) {
+            object[] results = this.Invoke("UpdateUserProfile", new object[] {
+                        Username,
+                        Email,
+                        Gender,
+                        Id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateUserProfileAsync(string Username, string Email, string Gender, int Id) {
+            this.UpdateUserProfileAsync(Username, Email, Gender, Id, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateUserProfileAsync(string Username, string Email, string Gender, int Id, object userState) {
+            if ((this.UpdateUserProfileOperationCompleted == null)) {
+                this.UpdateUserProfileOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateUserProfileOperationCompleted);
+            }
+            this.InvokeAsync("UpdateUserProfile", new object[] {
+                        Username,
+                        Email,
+                        Gender,
+                        Id}, this.UpdateUserProfileOperationCompleted, userState);
+        }
+        
+        private void OnUpdateUserProfileOperationCompleted(object arg) {
+            if ((this.UpdateUserProfileCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateUserProfileCompleted(this, new UpdateUserProfileCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -327,6 +367,32 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal GetUserByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void UpdateUserProfileCompletedEventHandler(object sender, UpdateUserProfileCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateUserProfileCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateUserProfileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

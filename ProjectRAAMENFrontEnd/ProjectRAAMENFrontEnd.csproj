@@ -94,6 +94,7 @@
     </Content>
     <Content Include="View\HomePage.aspx" />
     <Content Include="View\LoginPage.aspx" />
+    <Content Include="View\ProfilePage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="View\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>

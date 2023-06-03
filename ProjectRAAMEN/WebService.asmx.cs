@@ -43,5 +43,11 @@ namespace ProjectRAAMEN
         {
             return JsonConvert.SerializeObject(UserHandler.GetUserById(Id), new JsonSerializerSettings { ReferenceLoopHandling= ReferenceLoopHandling.Ignore });
         }
+
+        [WebMethod]
+        public string UpdateUserProfile(String Username, String Email, String Gender, int Id)
+        {
+            return JsonConvert.SerializeObject(UserHandler.UpdateUserProfile(Username, Email, Gender, Id));
+        }
     }
 }
