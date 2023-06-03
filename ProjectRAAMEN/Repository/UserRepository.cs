@@ -37,5 +37,19 @@ namespace ProjectRAAMEN.Repository
                                  select i).FirstOrDefault();
             return SelectedUser;
         }
+
+        public static String UpdateUserProfile(String Username, String Email, String Gender, int Id)
+        {
+            User SelectedUser = (from i in db.Users where i.Id == Id select i).FirstOrDefault();
+
+            if (SelectedUser != null)
+            {
+                SelectedUser.Username = Username;
+                SelectedUser.Email = Email;
+                SelectedUser.Gender = Gender;
+                return "Successfuly Updated";
+            }
+            return "User not found";
+        }
     }
 }

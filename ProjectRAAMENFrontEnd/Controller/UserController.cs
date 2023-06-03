@@ -40,7 +40,25 @@ namespace ProjectRAAMENFrontEnd.Controller
             return "";
         }
 
-        public static User GetUserByUsernameAndPassword(String Username, String Password)
+        public static String ValidateUpdateUserProfile(String Username, String Email, String Gender, String Password, int Id)
+        {
+            if (Username.Length < 5 || Username.Length > 15)
+                return "Username's lenght must be between 5 and 15 characters";
+            if (!Username.Any(Char.IsLetter) || !Username.Any(Char.IsWhiteSpace))
+                return "Username must consists of Alphabet and Space only";
+            if (!Email.EndsWith(".com"))
+                return "Email must end with '.com'";
+            if (Gender.Equals("Unselected"))
+                return "Gender must be selected";
+            if (Password != GetUserById(Id).Password)
+                return "Password doesn't match your credentials";
+            else
+                return WebService.UpdateUserProfile(Username, Email, Gender, Id);
+
+            return "Uncaught";
+        }
+
+            public static User GetUserByUsernameAndPassword(String Username, String Password)
         {
             return JsonConvert.DeserializeObject<User>(WebService.GetUserByUsernameAndPassword(Username, Password));
         }

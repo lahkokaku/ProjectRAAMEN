@@ -32,5 +32,10 @@ namespace ProjectRAAMEN.Handler
             User SelectedUser = UserRepository.GetUserById(Id);
             return SelectedUser;
         }
+
+        public static String UpdateUserProfile(String Username, String Email, String Gender, int Id)
+        {
+            return UserRepository.UpdateUserProfile(Username, Email, Gender, Id);
+        }
     }
 }
