@@ -37,5 +37,15 @@ namespace ProjectRAAMEN.Handler
         {
             return UserRepository.UpdateUserProfile(Username, Email, Gender, Id);
         }
+
+        public static List<User> GetAllCustomer()
+        {
+            return UserRepository.GetAllCustomer();
+        }
+        
+        public static List<User> GetAllStaff()
+        {
+            return UserRepository.GetAllStaff();
+        }
     }
 }

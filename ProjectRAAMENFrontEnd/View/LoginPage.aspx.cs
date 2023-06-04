@@ -39,7 +39,7 @@ namespace ProjectRAAMENFrontEnd.View
 
             if (SelectedUser == null)
             {
-                lblMessage.Text = "User not found";
+                lblMessage.Text = "Credentials don't match our record";
             }
             else
             {

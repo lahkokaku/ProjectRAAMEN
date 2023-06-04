@@ -50,5 +50,17 @@ namespace ProjectRAAMEN
         {
             return JsonHandler.Encode(UserHandler.UpdateUserProfile(Username, Email, Gender, Id));
         }
+
+        [WebMethod]
+        public string GetAllCustomer()
+        {
+            return JsonHandler.Encode(UserHandler.GetAllCustomer());
+        }
+
+        [WebMethod]
+        public string GetAllStaff()
+        {
+            return JsonHandler.Encode(UserHandler.GetAllStaff());
+        }
     }
 }
