@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ProjectRAAMEN.Handler;
 using ProjectRAAMEN.Model;
+using ProjectRAAMEN.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,31 +24,31 @@ namespace ProjectRAAMEN
         [WebMethod]
         public string InsertCustomer(string Username, string Password, string Gender, string Email)
         {
-            return UserHandler.InsertCustomer(Username, Password, Gender, Email);
+            return JsonHandler.Encode(UserHandler.InsertCustomer(Username, Password, Gender, Email));
         }
 
         [WebMethod]
         public string InsertStaff(string Username, string Password, string Gender, string Email)
         {
-            return UserHandler.InsertStaff(Username, Password, Gender, Email);
+            return JsonHandler.Encode(UserHandler.InsertStaff(Username, Password, Gender, Email));
         }
 
         [WebMethod]
         public string GetUserByUsernameAndPassword(String Username, String Password)
         {
-            return JsonConvert.SerializeObject(UserHandler.GetUserByUsernameAndPassword(Username, Password), new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Ignore });
+            return JsonHandler.Encode(UserHandler.GetUserByUsernameAndPassword(Username, Password));
         }
 
         [WebMethod]
         public string GetUserById(int Id)
         {
-            return JsonConvert.SerializeObject(UserHandler.GetUserById(Id), new JsonSerializerSettings { ReferenceLoopHandling= ReferenceLoopHandling.Ignore });
+            return JsonHandler.Encode(UserHandler.GetUserById(Id));
         }
 
         [WebMethod]
         public string UpdateUserProfile(String Username, String Email, String Gender, int Id)
         {
-            return JsonConvert.SerializeObject(UserHandler.UpdateUserProfile(Username, Email, Gender, Id));
+            return JsonHandler.Encode(UserHandler.UpdateUserProfile(Username, Email, Gender, Id));
         }
     }
 }
