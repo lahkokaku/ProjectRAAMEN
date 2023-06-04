@@ -52,5 +52,15 @@ namespace ProjectRAAMEN.Repository
             }
             return "User not found";
         }
+
+        public static List<User> GetAllCustomer()
+        {
+            return (from i in db.Users where i.RoleId == 3 select i).ToList();
+        }
+        
+        public static List<User> GetAllStaff()
+        {
+            return (from i in db.Users where i.RoleId == 2 select i).ToList();
+        }
     }
 }

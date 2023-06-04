@@ -39,6 +39,10 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback UpdateUserProfileOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetAllCustomerOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAllStaffOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -91,6 +95,12 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event UpdateUserProfileCompletedEventHandler UpdateUserProfileCompleted;
+        
+        /// <remarks/>
+        public event GetAllCustomerCompletedEventHandler GetAllCustomerCompleted;
+        
+        /// <remarks/>
+        public event GetAllStaffCompletedEventHandler GetAllStaffCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -258,6 +268,60 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllCustomer() {
+            object[] results = this.Invoke("GetAllCustomer", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllCustomerAsync() {
+            this.GetAllCustomerAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllCustomerAsync(object userState) {
+            if ((this.GetAllCustomerOperationCompleted == null)) {
+                this.GetAllCustomerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllCustomerOperationCompleted);
+            }
+            this.InvokeAsync("GetAllCustomer", new object[0], this.GetAllCustomerOperationCompleted, userState);
+        }
+        
+        private void OnGetAllCustomerOperationCompleted(object arg) {
+            if ((this.GetAllCustomerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllCustomerCompleted(this, new GetAllCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllStaff", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllStaff() {
+            object[] results = this.Invoke("GetAllStaff", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllStaffAsync() {
+            this.GetAllStaffAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllStaffAsync(object userState) {
+            if ((this.GetAllStaffOperationCompleted == null)) {
+                this.GetAllStaffOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllStaffOperationCompleted);
+            }
+            this.InvokeAsync("GetAllStaff", new object[0], this.GetAllStaffOperationCompleted, userState);
+        }
+        
+        private void OnGetAllStaffOperationCompleted(object arg) {
+            if ((this.GetAllStaffCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllStaffCompleted(this, new GetAllStaffCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -393,6 +457,58 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal UpdateUserProfileCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllCustomerCompletedEventHandler(object sender, GetAllCustomerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllStaffCompletedEventHandler(object sender, GetAllStaffCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllStaffCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllStaffCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

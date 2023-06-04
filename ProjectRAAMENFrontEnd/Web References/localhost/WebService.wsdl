@@ -82,6 +82,26 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllCustomer">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllStaff">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllStaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllStaffResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertCustomerSoapIn">
@@ -114,6 +134,18 @@
   <wsdl:message name="UpdateUserProfileSoapOut">
     <wsdl:part name="parameters" element="tns:UpdateUserProfileResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCustomer" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllStaff" />
+  </wsdl:message>
+  <wsdl:message name="GetAllStaffSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllStaffResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="InsertCustomer">
       <wsdl:input message="tns:InsertCustomerSoapIn" />
@@ -134,6 +166,14 @@
     <wsdl:operation name="UpdateUserProfile">
       <wsdl:input message="tns:UpdateUserProfileSoapIn" />
       <wsdl:output message="tns:UpdateUserProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomer">
+      <wsdl:input message="tns:GetAllCustomerSoapIn" />
+      <wsdl:output message="tns:GetAllCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <wsdl:input message="tns:GetAllStaffSoapIn" />
+      <wsdl:output message="tns:GetAllStaffSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -183,6 +223,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllCustomer">
+      <soap:operation soapAction="http://tempuri.org/GetAllCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <soap:operation soapAction="http://tempuri.org/GetAllStaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -224,6 +282,24 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateUserProfile">
       <soap12:operation soapAction="http://tempuri.org/UpdateUserProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomer">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStaff">
+      <soap12:operation soapAction="http://tempuri.org/GetAllStaff" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -67,5 +67,15 @@ namespace ProjectRAAMENFrontEnd.Controller
         {
             return JsonHandler.Decode<User>(WebService.GetUserById(Id));
         }
+
+        public static List<User> GetAllCustomer()
+        {
+            return JsonHandler.Decode<List<User>>(WebService.GetAllCustomer());
+        }
+
+        public static List<User> GetAllStaff()
+        {
+            return JsonHandler.Decode<List<User>>(WebService.GetAllStaff());
+        }
     }
 }
