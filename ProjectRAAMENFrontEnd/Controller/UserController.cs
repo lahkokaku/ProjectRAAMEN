@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using ProjectRAAMENFrontEnd.localhost;
 using ProjectRAAMENFrontEnd.Model;
+using ProjectRAAMENFrontEnd.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,19 +54,18 @@ namespace ProjectRAAMENFrontEnd.Controller
             if (Password != GetUserById(Id).Password)
                 return "Password doesn't match your credentials";
             else
-                return WebService.UpdateUserProfile(Username, Email, Gender, Id);
+                return JsonHandler.Decode<string>(WebService.UpdateUserProfile(Username, Email, Gender, Id));
 
-            return "Uncaught";
         }
 
             public static User GetUserByUsernameAndPassword(String Username, String Password)
         {
-            return JsonConvert.DeserializeObject<User>(WebService.GetUserByUsernameAndPassword(Username, Password));
+            return JsonHandler.Decode<User>(WebService.GetUserByUsernameAndPassword(Username, Password));
         }
 
         public static User GetUserById(int Id)
         {
-            return JsonConvert.DeserializeObject<User>(WebService.GetUserById(Id));
+            return JsonHandler.Decode<User>(WebService.GetUserById(Id));
         }
     }
 }
