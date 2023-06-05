@@ -37,7 +37,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MeatId" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Borth" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Broth" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Price" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
@@ -188,7 +188,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MeatId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Borth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Broth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Details" Relationship="Self.FK__Detail__RamenId__30F848ED" FromRole="Ramen" ToRole="Detail" />
           <NavigationProperty Name="Meat" Relationship="Self.FK__Ramen__MeatId__2D27B809" FromRole="Ramen" ToRole="Meat" />
@@ -341,7 +341,7 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MeatId" ColumnName="MeatId" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Borth" ColumnName="Borth" />
+                <ScalarProperty Name="Broth" ColumnName="Broth" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
               </MappingFragment>
             </EntityTypeMapping>

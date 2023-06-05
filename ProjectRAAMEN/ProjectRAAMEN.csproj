@@ -96,6 +96,7 @@
     <Content Include="WebService.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\RamenFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Detail.cs">
