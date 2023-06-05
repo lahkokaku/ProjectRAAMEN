@@ -84,8 +84,8 @@
     </Content>
     <Content Include="Model\LocalDatabaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LocalDatabaseModel.Context.cs</LastGenOutput>
       <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+      <LastGenOutput>LocalDatabaseModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\LocalDatabaseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -94,8 +94,18 @@
     </Content>
     <Content Include="View\HomePage.aspx" />
     <Content Include="View\LoginPage.aspx" />
+    <Content Include="View\Manage_Ramen\ManageRamenUpdatePage.aspx" />
+    <Content Include="View\Manage_Ramen\ManageRamenInsertPage.aspx" />
+    <Content Include="View\Manage_Ramen\ManageRamenPage.aspx" />
     <Content Include="View\ProfilePage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
+    <EntityDeploy Include="Model\LocalDatabaseModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model\LocalDatabaseModel.edmx.diagram">
+      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,6 +180,27 @@
     <Compile Include="View\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenUpdatePage.aspx.cs">
+      <DependentUpon>ManageRamenUpdatePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenUpdatePage.aspx.designer.cs">
+      <DependentUpon>ManageRamenUpdatePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenInsertPage.aspx.cs">
+      <DependentUpon>ManageRamenInsertPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenInsertPage.aspx.designer.cs">
+      <DependentUpon>ManageRamenInsertPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenPage.aspx.cs">
+      <DependentUpon>ManageRamenPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Manage_Ramen\ManageRamenPage.aspx.designer.cs">
+      <DependentUpon>ManageRamenPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfilePage.aspx.cs">
       <DependentUpon>ProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,13 +222,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Model\LocalDatabaseModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LocalDatabaseModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Model\LocalDatabaseModel.edmx.diagram">
-      <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="View\Main.Master" />
     <None Include="Web References\localhost\WebService.wsdl" />
@@ -230,6 +254,7 @@
       <CachedSettingsPropName>ProjectRAAMENFrontEnd_localhost_WebService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
