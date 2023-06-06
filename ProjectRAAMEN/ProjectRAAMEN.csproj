@@ -98,6 +98,8 @@
   <ItemGroup>
     <Compile Include="Factory\RamenFactory.cs" />
     <Compile Include="Factory\UserFactory.cs" />
+    <Compile Include="Handler\MeatHandler.cs" />
+    <Compile Include="Handler\RamenHandler.cs" />
     <Compile Include="Handler\UserHandler.cs" />
     <Compile Include="Model\Detail.cs">
       <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
@@ -133,6 +135,8 @@
       <DependentUpon>LocalDatabaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\MeatRepository.cs" />
+    <Compile Include="Repository\RamenRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Util\JsonHandler.cs" />
     <Compile Include="WebService.asmx.cs">

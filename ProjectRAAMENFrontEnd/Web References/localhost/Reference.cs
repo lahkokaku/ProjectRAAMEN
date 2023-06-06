@@ -43,6 +43,18 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback GetAllStaffOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InsertRamenOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAllRamenOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback UpdateRamenOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DeleteRamenOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetRamenByIdOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetAllMeatOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -101,6 +113,24 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event GetAllStaffCompletedEventHandler GetAllStaffCompleted;
+        
+        /// <remarks/>
+        public event InsertRamenCompletedEventHandler InsertRamenCompleted;
+        
+        /// <remarks/>
+        public event GetAllRamenCompletedEventHandler GetAllRamenCompleted;
+        
+        /// <remarks/>
+        public event UpdateRamenCompletedEventHandler UpdateRamenCompleted;
+        
+        /// <remarks/>
+        public event DeleteRamenCompletedEventHandler DeleteRamenCompleted;
+        
+        /// <remarks/>
+        public event GetRamenByIdCompletedEventHandler GetRamenByIdCompleted;
+        
+        /// <remarks/>
+        public event GetAllMeatCompletedEventHandler GetAllMeatCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -322,6 +352,190 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertRamen", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string InsertRamen(string RamenName, int MeatId, string Broth, int Price) {
+            object[] results = this.Invoke("InsertRamen", new object[] {
+                        RamenName,
+                        MeatId,
+                        Broth,
+                        Price});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InsertRamenAsync(string RamenName, int MeatId, string Broth, int Price) {
+            this.InsertRamenAsync(RamenName, MeatId, Broth, Price, null);
+        }
+        
+        /// <remarks/>
+        public void InsertRamenAsync(string RamenName, int MeatId, string Broth, int Price, object userState) {
+            if ((this.InsertRamenOperationCompleted == null)) {
+                this.InsertRamenOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertRamenOperationCompleted);
+            }
+            this.InvokeAsync("InsertRamen", new object[] {
+                        RamenName,
+                        MeatId,
+                        Broth,
+                        Price}, this.InsertRamenOperationCompleted, userState);
+        }
+        
+        private void OnInsertRamenOperationCompleted(object arg) {
+            if ((this.InsertRamenCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertRamenCompleted(this, new InsertRamenCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllRamen", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllRamen() {
+            object[] results = this.Invoke("GetAllRamen", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllRamenAsync() {
+            this.GetAllRamenAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllRamenAsync(object userState) {
+            if ((this.GetAllRamenOperationCompleted == null)) {
+                this.GetAllRamenOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllRamenOperationCompleted);
+            }
+            this.InvokeAsync("GetAllRamen", new object[0], this.GetAllRamenOperationCompleted, userState);
+        }
+        
+        private void OnGetAllRamenOperationCompleted(object arg) {
+            if ((this.GetAllRamenCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllRamenCompleted(this, new GetAllRamenCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateRamen", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string UpdateRamen(int Id, string RamenName, int MeatId, string Broth, int Price) {
+            object[] results = this.Invoke("UpdateRamen", new object[] {
+                        Id,
+                        RamenName,
+                        MeatId,
+                        Broth,
+                        Price});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void UpdateRamenAsync(int Id, string RamenName, int MeatId, string Broth, int Price) {
+            this.UpdateRamenAsync(Id, RamenName, MeatId, Broth, Price, null);
+        }
+        
+        /// <remarks/>
+        public void UpdateRamenAsync(int Id, string RamenName, int MeatId, string Broth, int Price, object userState) {
+            if ((this.UpdateRamenOperationCompleted == null)) {
+                this.UpdateRamenOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateRamenOperationCompleted);
+            }
+            this.InvokeAsync("UpdateRamen", new object[] {
+                        Id,
+                        RamenName,
+                        MeatId,
+                        Broth,
+                        Price}, this.UpdateRamenOperationCompleted, userState);
+        }
+        
+        private void OnUpdateRamenOperationCompleted(object arg) {
+            if ((this.UpdateRamenCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.UpdateRamenCompleted(this, new UpdateRamenCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DeleteRamen", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string DeleteRamen(int Id) {
+            object[] results = this.Invoke("DeleteRamen", new object[] {
+                        Id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DeleteRamenAsync(int Id) {
+            this.DeleteRamenAsync(Id, null);
+        }
+        
+        /// <remarks/>
+        public void DeleteRamenAsync(int Id, object userState) {
+            if ((this.DeleteRamenOperationCompleted == null)) {
+                this.DeleteRamenOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDeleteRamenOperationCompleted);
+            }
+            this.InvokeAsync("DeleteRamen", new object[] {
+                        Id}, this.DeleteRamenOperationCompleted, userState);
+        }
+        
+        private void OnDeleteRamenOperationCompleted(object arg) {
+            if ((this.DeleteRamenCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DeleteRamenCompleted(this, new DeleteRamenCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetRamenById", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetRamenById(int Id) {
+            object[] results = this.Invoke("GetRamenById", new object[] {
+                        Id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetRamenByIdAsync(int Id) {
+            this.GetRamenByIdAsync(Id, null);
+        }
+        
+        /// <remarks/>
+        public void GetRamenByIdAsync(int Id, object userState) {
+            if ((this.GetRamenByIdOperationCompleted == null)) {
+                this.GetRamenByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetRamenByIdOperationCompleted);
+            }
+            this.InvokeAsync("GetRamenById", new object[] {
+                        Id}, this.GetRamenByIdOperationCompleted, userState);
+        }
+        
+        private void OnGetRamenByIdOperationCompleted(object arg) {
+            if ((this.GetRamenByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetRamenByIdCompleted(this, new GetRamenByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllMeat", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllMeat() {
+            object[] results = this.Invoke("GetAllMeat", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllMeatAsync() {
+            this.GetAllMeatAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllMeatAsync(object userState) {
+            if ((this.GetAllMeatOperationCompleted == null)) {
+                this.GetAllMeatOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllMeatOperationCompleted);
+            }
+            this.InvokeAsync("GetAllMeat", new object[0], this.GetAllMeatOperationCompleted, userState);
+        }
+        
+        private void OnGetAllMeatOperationCompleted(object arg) {
+            if ((this.GetAllMeatCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllMeatCompleted(this, new GetAllMeatCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -509,6 +723,162 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal GetAllStaffCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InsertRamenCompletedEventHandler(object sender, InsertRamenCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertRamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertRamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllRamenCompletedEventHandler(object sender, GetAllRamenCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllRamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllRamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void UpdateRamenCompletedEventHandler(object sender, UpdateRamenCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class UpdateRamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal UpdateRamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void DeleteRamenCompletedEventHandler(object sender, DeleteRamenCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DeleteRamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DeleteRamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetRamenByIdCompletedEventHandler(object sender, GetRamenByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetRamenByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetRamenByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllMeatCompletedEventHandler(object sender, GetAllMeatCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllMeatCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllMeatCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

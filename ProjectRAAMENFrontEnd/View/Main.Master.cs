@@ -36,7 +36,42 @@ namespace ProjectRAAMENFrontEnd.View
             if (Response.Cookies["user_cookie"] != null)
                 Response.Cookies["user_cookie"].Expires = DateTime.Now.AddDays(-1);
 
-            Response.Redirect("./LoginPage.aspx");
+            Response.Redirect("~/View/LoginPage.aspx");
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/HomePage.aspx");
+        }
+
+        protected void btnOrderRamen_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/OrderPage.aspx");
+        }
+
+        protected void btnTransactionHistory_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/TransactionsPage.aspx");
+        }
+
+        protected void btnManageRamen_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/Manage_Ramen/ManageRamenPage.aspx");
+        }
+
+        protected void btnOrderQueue_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/OrderQueuePage.aspx");
+        }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ReportPage.aspx");
+        }
+
+        protected void btnProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/ProfilePage.aspx");
         }
     }
 }

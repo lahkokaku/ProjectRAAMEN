@@ -102,6 +102,89 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="InsertRamen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RamenName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MeatId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Broth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertRamenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertRamenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllRamen">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllRamenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRamenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRamen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RamenName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MeatId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Broth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateRamenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateRamenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRamen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRamenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteRamenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRamenById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRamenByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRamenByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMeat">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMeatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertCustomerSoapIn">
@@ -146,6 +229,42 @@
   <wsdl:message name="GetAllStaffSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllStaffResponse" />
   </wsdl:message>
+  <wsdl:message name="InsertRamenSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertRamen" />
+  </wsdl:message>
+  <wsdl:message name="InsertRamenSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertRamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRamenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRamen" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRamenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRamenSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateRamen" />
+  </wsdl:message>
+  <wsdl:message name="UpdateRamenSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateRamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRamenSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRamen" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRamenSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRamenByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRamenById" />
+  </wsdl:message>
+  <wsdl:message name="GetRamenByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRamenByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMeatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMeat" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMeatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMeatResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="InsertCustomer">
       <wsdl:input message="tns:InsertCustomerSoapIn" />
@@ -174,6 +293,30 @@
     <wsdl:operation name="GetAllStaff">
       <wsdl:input message="tns:GetAllStaffSoapIn" />
       <wsdl:output message="tns:GetAllStaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRamen">
+      <wsdl:input message="tns:InsertRamenSoapIn" />
+      <wsdl:output message="tns:InsertRamenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRamen">
+      <wsdl:input message="tns:GetAllRamenSoapIn" />
+      <wsdl:output message="tns:GetAllRamenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRamen">
+      <wsdl:input message="tns:UpdateRamenSoapIn" />
+      <wsdl:output message="tns:UpdateRamenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRamen">
+      <wsdl:input message="tns:DeleteRamenSoapIn" />
+      <wsdl:output message="tns:DeleteRamenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRamenById">
+      <wsdl:input message="tns:GetRamenByIdSoapIn" />
+      <wsdl:output message="tns:GetRamenByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMeat">
+      <wsdl:input message="tns:GetAllMeatSoapIn" />
+      <wsdl:output message="tns:GetAllMeatSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -241,6 +384,60 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="InsertRamen">
+      <soap:operation soapAction="http://tempuri.org/InsertRamen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRamen">
+      <soap:operation soapAction="http://tempuri.org/GetAllRamen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRamen">
+      <soap:operation soapAction="http://tempuri.org/UpdateRamen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRamen">
+      <soap:operation soapAction="http://tempuri.org/DeleteRamen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRamenById">
+      <soap:operation soapAction="http://tempuri.org/GetRamenById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMeat">
+      <soap:operation soapAction="http://tempuri.org/GetAllMeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -300,6 +497,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllStaff">
       <soap12:operation soapAction="http://tempuri.org/GetAllStaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRamen">
+      <soap12:operation soapAction="http://tempuri.org/InsertRamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRamen">
+      <soap12:operation soapAction="http://tempuri.org/GetAllRamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRamen">
+      <soap12:operation soapAction="http://tempuri.org/UpdateRamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRamen">
+      <soap12:operation soapAction="http://tempuri.org/DeleteRamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRamenById">
+      <soap12:operation soapAction="http://tempuri.org/GetRamenById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMeat">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMeat" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
