@@ -9,7 +9,6 @@ namespace ProjectRAAMEN.Handler
 {
     public class UserHandler
     {
-        public static LocalDatabaseEntities db = new LocalDatabaseEntities();
         public static string InsertCustomer(String Username, String Email, String Gender, String Password)
         {
             UserRepository.InsertCustomer(Username, Email, Gender, Password);

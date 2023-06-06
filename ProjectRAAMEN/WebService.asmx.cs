@@ -62,5 +62,35 @@ namespace ProjectRAAMEN
         {
             return JsonHandler.Encode(UserHandler.GetAllStaff());
         }
+        [WebMethod]
+        public string InsertRamen(string RamenName, int MeatId, string Broth, int Price)
+        {
+            return JsonHandler.Encode(RamenHandler.InsertRamen(RamenName, MeatId, Broth, Price));
+        }
+        [WebMethod]
+        public string GetAllRamen()
+        {
+            return JsonHandler.Encode(RamenHandler.GetAllRamen());
+        }
+        [WebMethod]
+        public string UpdateRamen(int Id, string RamenName, int MeatId, string Broth, int Price)
+        {
+            return JsonHandler.Encode(RamenHandler.UpdateRamen(Id, RamenName, MeatId, Broth, Price));
+        }
+        [WebMethod]
+        public string DeleteRamen(int Id)
+        {
+            return JsonHandler.Encode(RamenHandler.DeleteRamen(Id));
+        }
+        [WebMethod]
+        public string GetRamenById(int Id)
+        {
+            return JsonHandler.Encode(RamenHandler.GetRamenById(Id));
+        }
+        [WebMethod]
+        public string GetAllMeat()
+        {
+            return JsonHandler.Encode(MeatHandler.GetAllMeat());
+        }
     }
 }

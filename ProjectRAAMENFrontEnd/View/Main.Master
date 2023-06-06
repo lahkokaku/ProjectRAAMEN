@@ -14,24 +14,24 @@
             <div style="display: flex; justify-content: space-between">
                 <span>
                     <span>
-                        <a href="./HomePage.aspx">Home</a> | 
+                        <asp:Button Text="Home" runat="server" ID="btnHome" OnClick="btnHome_Click" /> | 
                     </span>
                     <span id="navbarCustomer" runat="server" >
-                        <a href="./OrderRamenPage.aspx">Order Ramen</a> | 
-                        <a href="./TransactionsPage.aspx">Transaction History</a> | 
+                        <asp:Button Text="Order Ramen" runat="server" ID="btnOrderRamen" OnClick="btnOrderRamen_Click" /> | 
+                        <asp:Button Text="Transaction History" runat="server" ID="btnTransactionHistory" OnClick="btnTransactionHistory_Click" /> | 
                     </span>
                     <span id="navbarStaff" runat="server" >
-                        <a href="./ManageRamenPage.aspx">Manage Ramen</a> | 
-                        <a href="./OrderQueuePage.aspx">Order Queue</a> | 
+                        <asp:Button Text="Manage Ramen" runat="server" ID="btnManageRamen" OnClick="btnManageRamen_Click" /> | 
+                        <asp:Button Text="Order Queue" runat="server" ID="btnOrderQueue" OnClick="btnOrderQueue_Click" /> | 
                     </span>
                     <span id="navbarAdmin" runat="server" >
-                        <a href="./ManageRamenPage.aspx">Manage Ramen</a> | 
-                        <a href="./OrderQueuePage.aspx">Order Queue</a> | 
-                        <a href="./TransactionsPage.aspx">Transaction History</a> | 
-                        <a href="./ReportPage.aspx">Report</a> | 
+                        <asp:Button Text="Manage Ramen" runat="server" ID="btnManageRamen2" OnClick="btnManageRamen_Click" /> | 
+                        <asp:Button Text="Order Queue" runat="server" ID="btnOrderQueue2" OnClick="btnOrderQueue_Click" /> | 
+                        <asp:Button Text="Transaction History" runat="server" ID="btnTransactionHistory2" OnClick="btnTransactionHistory_Click" /> | 
+                        <asp:Button Text="Report" runat="server" Id="btnReport" OnClick="btnReport_Click" /> | 
                     </span>
                     <span>
-                        <a href="./ProfilePage.aspx">Profile</a>
+                        <asp:Button Text="Profile" runat="server" ID="btnProfile" OnClick="btnProfile_Click" />
                     </span>
                 </span>
                 <span>

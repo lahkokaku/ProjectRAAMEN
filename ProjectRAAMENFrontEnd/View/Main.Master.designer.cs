@@ -33,6 +33,15 @@ namespace ProjectRAAMENFrontEnd.View
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// btnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHome;
+
+        /// <summary>
         /// navbarCustomer control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace ProjectRAAMENFrontEnd.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarCustomer;
+
+        /// <summary>
+        /// btnOrderRamen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderRamen;
+
+        /// <summary>
+        /// btnTransactionHistory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTransactionHistory;
 
         /// <summary>
         /// navbarStaff control.
@@ -51,6 +78,24 @@ namespace ProjectRAAMENFrontEnd.View
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarStaff;
 
         /// <summary>
+        /// btnManageRamen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageRamen;
+
+        /// <summary>
+        /// btnOrderQueue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderQueue;
+
+        /// <summary>
         /// navbarAdmin control.
         /// </summary>
         /// <remarks>
@@ -58,6 +103,51 @@ namespace ProjectRAAMENFrontEnd.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarAdmin;
+
+        /// <summary>
+        /// btnManageRamen2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageRamen2;
+
+        /// <summary>
+        /// btnOrderQueue2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrderQueue2;
+
+        /// <summary>
+        /// btnTransactionHistory2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnTransactionHistory2;
+
+        /// <summary>
+        /// btnReport control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReport;
+
+        /// <summary>
+        /// btnProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnProfile;
 
         /// <summary>
         /// btnLogout control.
