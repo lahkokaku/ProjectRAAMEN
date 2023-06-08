@@ -55,6 +55,10 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback GetAllMeatOperationCompleted;
         
+        private System.Threading.SendOrPostCallback InsertHeaderOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InsertDetailOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -131,6 +135,12 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event GetAllMeatCompletedEventHandler GetAllMeatCompleted;
+        
+        /// <remarks/>
+        public event InsertHeaderCompletedEventHandler InsertHeaderCompleted;
+        
+        /// <remarks/>
+        public event InsertDetailCompletedEventHandler InsertDetailCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -536,6 +546,72 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertHeader", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string InsertHeader(int customerId, int staffId, System.DateTime date) {
+            object[] results = this.Invoke("InsertHeader", new object[] {
+                        customerId,
+                        staffId,
+                        date});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InsertHeaderAsync(int customerId, int staffId, System.DateTime date) {
+            this.InsertHeaderAsync(customerId, staffId, date, null);
+        }
+        
+        /// <remarks/>
+        public void InsertHeaderAsync(int customerId, int staffId, System.DateTime date, object userState) {
+            if ((this.InsertHeaderOperationCompleted == null)) {
+                this.InsertHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertHeaderOperationCompleted);
+            }
+            this.InvokeAsync("InsertHeader", new object[] {
+                        customerId,
+                        staffId,
+                        date}, this.InsertHeaderOperationCompleted, userState);
+        }
+        
+        private void OnInsertHeaderOperationCompleted(object arg) {
+            if ((this.InsertHeaderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertHeaderCompleted(this, new InsertHeaderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertDetail", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string InsertDetail(int headerId, int ramenId, int quantity) {
+            object[] results = this.Invoke("InsertDetail", new object[] {
+                        headerId,
+                        ramenId,
+                        quantity});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void InsertDetailAsync(int headerId, int ramenId, int quantity) {
+            this.InsertDetailAsync(headerId, ramenId, quantity, null);
+        }
+        
+        /// <remarks/>
+        public void InsertDetailAsync(int headerId, int ramenId, int quantity, object userState) {
+            if ((this.InsertDetailOperationCompleted == null)) {
+                this.InsertDetailOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsertDetailOperationCompleted);
+            }
+            this.InvokeAsync("InsertDetail", new object[] {
+                        headerId,
+                        ramenId,
+                        quantity}, this.InsertDetailOperationCompleted, userState);
+        }
+        
+        private void OnInsertDetailOperationCompleted(object arg) {
+            if ((this.InsertDetailCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InsertDetailCompleted(this, new InsertDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -879,6 +955,58 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal GetAllMeatCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InsertHeaderCompletedEventHandler(object sender, InsertHeaderCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertHeaderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertHeaderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void InsertDetailCompletedEventHandler(object sender, InsertDetailCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class InsertDetailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal InsertDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

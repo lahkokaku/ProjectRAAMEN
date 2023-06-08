@@ -18,6 +18,8 @@
     <div>
         <asp:Label Text="" runat="server" ID="lblRamenMessage" />
     </div>
+
+    
     <br />
     <div>
         <asp:Button Text="Create New Ramen" runat="server" ID="btnCreateNewRamen" OnClick="btnCreateNewRamen_Click" />
