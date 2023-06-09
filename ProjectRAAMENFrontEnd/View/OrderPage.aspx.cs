@@ -80,7 +80,11 @@ namespace ProjectRAAMENFrontEnd.View
         }
         protected void btn_buy_Click(object sender, EventArgs e)
         {
-            
+            if(cart.Count == 0)
+            {
+                labelMsg.Text = "Cart is empty";
+                return;
+            }
             List<Raman> allRamen = new List<Raman>();
             allRamen = RamenController.GetAllRamen();
             var quantity = initializeQuantity(allRamen);
@@ -95,6 +99,12 @@ namespace ProjectRAAMENFrontEnd.View
 
         }
 
-        
+        protected void cartList_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow Row = cartList.Rows[e.RowIndex];
+            int Index = Int32.Parse(Row.RowIndex.ToString());
+            cart.RemoveAt(Index);
+            cartList.DataBind();
+        }
     }
 }

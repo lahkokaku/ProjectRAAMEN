@@ -3,6 +3,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Manage Ramen</h2>
+    <%if (RamenList.Count == 0)
+        { %>
+    <h3>No ramen found. Please create a new one.</h3>
+    <%}
+        else
+        { %>
     <div>
         <asp:GridView runat="server" ID="gvRamenList" AutoGenerateColumns="False" OnRowDeleting="gvRamenList_RowDeleting" OnRowEditing="gvRamenList_RowEditing" >
             <Columns>
@@ -15,6 +21,7 @@
             </Columns>
         </asp:GridView>
     </div>
+    <%} %>
     <div>
         <asp:Label Text="" runat="server" ID="lblRamenMessage" />
     </div>

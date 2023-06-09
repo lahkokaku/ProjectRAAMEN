@@ -1,4 +1,5 @@
-﻿CREATE TABLE [Role](
+﻿-- Create Tables
+CREATE TABLE [Role](
 	Id INT NOT NULL IDENTITY(1,1),
 	[Name] VARCHAR(50) NOT NULL,
 
@@ -17,7 +18,7 @@ CREATE TABLE [User](
 	FOREIGN KEY(RoleId) REFERENCES [Role](Id)
 )
 
-CREATE TABLE Header(
+CREATE TABLE [Header](
 	Id INT NOT NULL IDENTITY(1,1),
 	CustomerId INT NOT NULL,
 	StaffId INT NOT NULL,
@@ -54,3 +55,19 @@ CREATE TABLE [Detail](
 	FOREIGN KEY(HeaderId) REFERENCES Header(Id),
 	FOREIGN KEY(RamenId) REFERENCES Ramen(Id),
 )
+
+-- Seeding Role Table (1 => Admin, 2 => Staff, 3 => Customer)
+INSERT INTO [Role] ([Name]) VALUES
+('Admin'),
+('Staff'),
+('Customer')
+
+-- Seeding Meat Table
+INSERT INTO [Meat] ([Name]) VALUES
+('Chicken'),
+('Pork'),
+('Beef')
+
+-- Seeding User Table for Admin Account (username: 'admin', password: 'admin123')
+INSERT INTO [User] ([RoleId], [Username], [Email], [Gender], [Password]) VALUES
+(1, 'admin', 'admin.com', 'Male', 'admin123')
