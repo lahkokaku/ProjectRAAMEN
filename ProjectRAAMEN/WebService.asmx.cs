@@ -92,5 +92,17 @@ namespace ProjectRAAMEN
         {
             return JsonHandler.Encode(MeatHandler.GetAllMeat());
         }
+
+        [WebMethod]
+        public string InsertHeader(int customerId, int staffId, DateTime date)
+        {
+            return JsonHandler.Encode(HeaderHandler.InsertHeader(customerId, staffId, date));
+        }
+
+        [WebMethod]
+        public string InsertDetail(int headerId, int ramenId, int quantity)
+        {
+            return JsonHandler.Encode(DetailHandler.InsertDetail(headerId, ramenId, quantity));
+        }
     }
 }

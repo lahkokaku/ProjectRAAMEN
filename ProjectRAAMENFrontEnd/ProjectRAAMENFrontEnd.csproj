@@ -97,6 +97,7 @@
     <Content Include="View\Manage_Ramen\ManageRamenUpdatePage.aspx" />
     <Content Include="View\Manage_Ramen\ManageRamenInsertPage.aspx" />
     <Content Include="View\Manage_Ramen\ManageRamenPage.aspx" />
+    <Content Include="View\OrderPage.aspx" />
     <Content Include="View\ProfilePage.aspx" />
     <Content Include="View\RegisterPage.aspx" />
     <EntityDeploy Include="Model\LocalDatabaseModel.edmx">
@@ -118,6 +119,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DetailController.cs" />
+    <Compile Include="Controller\HeaderController.cs" />
     <Compile Include="Controller\MeatController.cs" />
     <Compile Include="Controller\RamenController.cs" />
     <Compile Include="Controller\UserController.cs" />
@@ -202,6 +205,13 @@
     </Compile>
     <Compile Include="View\Manage_Ramen\ManageRamenPage.aspx.designer.cs">
       <DependentUpon>ManageRamenPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderPage.aspx.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\OrderPage.aspx.designer.cs">
+      <DependentUpon>OrderPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ProfilePage.aspx.cs">
       <DependentUpon>ProfilePage.aspx</DependentUpon>
