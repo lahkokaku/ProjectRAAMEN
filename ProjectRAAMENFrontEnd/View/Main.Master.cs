@@ -14,7 +14,7 @@ namespace ProjectRAAMENFrontEnd.View
         {
             if (Session["user"] == null && Request.Cookies["user_cookie"] == null)
             {
-                Response.Redirect("./LoginPage.aspx");
+                Response.Redirect("~/View/LoginPage.aspx");
             }
             else if (Session["user"] == null)
             {
@@ -51,7 +51,7 @@ namespace ProjectRAAMENFrontEnd.View
 
         protected void btnTransactionHistory_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/TransactionsPage.aspx");
+            Response.Redirect("~/View/History/HeaderPage.aspx");
         }
 
         protected void btnManageRamen_Click(object sender, EventArgs e)

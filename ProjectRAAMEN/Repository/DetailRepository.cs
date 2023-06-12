@@ -16,5 +16,10 @@ namespace ProjectRAAMEN.Repository
             db.Details.Add(newDetail);
             db.SaveChanges();
         }
+
+        public static List<Detail> GetDetailById(int Id)
+        {
+            return (from i in db.Details where i.HeaderId == Id select i).ToList();
+        }
     }
 }

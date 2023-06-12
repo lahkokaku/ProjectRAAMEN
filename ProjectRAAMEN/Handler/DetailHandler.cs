@@ -14,5 +14,9 @@ namespace ProjectRAAMEN.Handler
             DetailRepository.InsertDetail(headerId, ramenId, quantity);
             return "successfuly added";
         }
+        public static List<Detail> GetDetailById(int Id)
+        {
+            return DetailRepository.GetDetailById(Id);
+        }
     }
 }

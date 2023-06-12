@@ -92,6 +92,8 @@
       <DependentUpon>LocalDatabaseModel.edmx</DependentUpon>
       <LastGenOutput>LocalDatabaseModel.cs</LastGenOutput>
     </Content>
+    <Content Include="View\History\DetailPage.aspx" />
+    <Content Include="View\History\HeaderPage.aspx" />
     <Content Include="View\HomePage.aspx" />
     <Content Include="View\LoginPage.aspx" />
     <Content Include="View\Manage_Ramen\ManageRamenUpdatePage.aspx" />
@@ -164,6 +166,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Util\JsonHandler.cs" />
+    <Compile Include="View\History\DetailPage.aspx.cs">
+      <DependentUpon>DetailPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\History\DetailPage.aspx.designer.cs">
+      <DependentUpon>DetailPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\History\HeaderPage.aspx.cs">
+      <DependentUpon>HeaderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\History\HeaderPage.aspx.designer.cs">
+      <DependentUpon>HeaderPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

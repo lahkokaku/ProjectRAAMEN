@@ -100,9 +100,21 @@ namespace ProjectRAAMEN
         }
 
         [WebMethod]
+        public string GetAllHeader()
+        {
+            return JsonHandler.Encode(HeaderHandler.GetAllHeader());
+        }
+
+        [WebMethod]
         public string InsertDetail(int headerId, int ramenId, int quantity)
         {
             return JsonHandler.Encode(DetailHandler.InsertDetail(headerId, ramenId, quantity));
+        }
+
+        [WebMethod]
+        public string GetDetailById (int id)
+        {
+            return JsonHandler.Encode(DetailHandler.GetDetailById(id));
         }
     }
 }

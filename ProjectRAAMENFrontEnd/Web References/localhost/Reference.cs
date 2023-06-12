@@ -57,7 +57,11 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback InsertHeaderOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetAllHeaderOperationCompleted;
+        
         private System.Threading.SendOrPostCallback InsertDetailOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetDetailByIdOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -140,7 +144,13 @@ namespace ProjectRAAMENFrontEnd.localhost {
         public event InsertHeaderCompletedEventHandler InsertHeaderCompleted;
         
         /// <remarks/>
+        public event GetAllHeaderCompletedEventHandler GetAllHeaderCompleted;
+        
+        /// <remarks/>
         public event InsertDetailCompletedEventHandler InsertDetailCompleted;
+        
+        /// <remarks/>
+        public event GetDetailByIdCompletedEventHandler GetDetailByIdCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -579,6 +589,33 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllHeader", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllHeader() {
+            object[] results = this.Invoke("GetAllHeader", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllHeaderAsync() {
+            this.GetAllHeaderAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllHeaderAsync(object userState) {
+            if ((this.GetAllHeaderOperationCompleted == null)) {
+                this.GetAllHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllHeaderOperationCompleted);
+            }
+            this.InvokeAsync("GetAllHeader", new object[0], this.GetAllHeaderOperationCompleted, userState);
+        }
+        
+        private void OnGetAllHeaderOperationCompleted(object arg) {
+            if ((this.GetAllHeaderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllHeaderCompleted(this, new GetAllHeaderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertDetail", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string InsertDetail(int headerId, int ramenId, int quantity) {
             object[] results = this.Invoke("InsertDetail", new object[] {
@@ -608,6 +645,35 @@ namespace ProjectRAAMENFrontEnd.localhost {
             if ((this.InsertDetailCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.InsertDetailCompleted(this, new InsertDetailCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetDetailById", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetDetailById(int id) {
+            object[] results = this.Invoke("GetDetailById", new object[] {
+                        id});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetDetailByIdAsync(int id) {
+            this.GetDetailByIdAsync(id, null);
+        }
+        
+        /// <remarks/>
+        public void GetDetailByIdAsync(int id, object userState) {
+            if ((this.GetDetailByIdOperationCompleted == null)) {
+                this.GetDetailByIdOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetDetailByIdOperationCompleted);
+            }
+            this.InvokeAsync("GetDetailById", new object[] {
+                        id}, this.GetDetailByIdOperationCompleted, userState);
+        }
+        
+        private void OnGetDetailByIdOperationCompleted(object arg) {
+            if ((this.GetDetailByIdCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetDetailByIdCompleted(this, new GetDetailByIdCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -996,6 +1062,32 @@ namespace ProjectRAAMENFrontEnd.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllHeaderCompletedEventHandler(object sender, GetAllHeaderCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllHeaderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllHeaderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
     public delegate void InsertDetailCompletedEventHandler(object sender, InsertDetailCompletedEventArgs e);
     
     /// <remarks/>
@@ -1007,6 +1099,32 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal InsertDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetDetailByIdCompletedEventHandler(object sender, GetDetailByIdCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetDetailByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetDetailByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

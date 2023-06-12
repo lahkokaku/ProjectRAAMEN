@@ -8,6 +8,7 @@
     </div>
     <h2>Update Ramen</h2>
     <div>
+        <a href="ManageRamenUpdatePage.aspx">ManageRamenUpdatePage.aspx</a>
         <asp:Label Text="Ramen Id: " runat="server" /><asp:Label Text="" runat="server" Id="lblRamenId" />
     </div>
     <div>
