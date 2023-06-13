@@ -15,5 +15,9 @@ namespace ProjectRAAMEN.Handler
             return header;
 
         }
+        public static List<Header> GetAllHeader()
+        {
+            return HeaderRepository.GetAllHeader();
+        }
     }
 }

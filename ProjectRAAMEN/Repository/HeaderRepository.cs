@@ -18,6 +18,10 @@ namespace ProjectRAAMEN.Repository
             db.SaveChanges();
             return newHeader;
         }
+        public static List<Header> GetAllHeader()
+        {
+            return (from i in db.Headers select i).ToList();
+        }
 
 
     }

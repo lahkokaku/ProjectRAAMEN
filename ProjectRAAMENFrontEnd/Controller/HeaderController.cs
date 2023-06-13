@@ -13,8 +13,14 @@ namespace ProjectRAAMENFrontEnd.Controller
         public static WebService WebService = new WebService();
         public static Header InsertHeader(int customerId, int staffId, DateTime date)
         {
-            return JsonHandler.Decode<Header>(WebService.InsertHeader(customerId,staffId,date));
+            return JsonHandler.Decode<Header>(WebService.InsertHeader(customerId, staffId, date));
+
         }
-        
+
+        public static List<Header> GetAllHeader()
+        {
+            return JsonHandler.Decode<List<Header>>(WebService.GetAllHeader());
+
+        }
     }
 }
