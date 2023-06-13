@@ -124,6 +124,12 @@ namespace ProjectRAAMEN
         }
 
         [WebMethod]
+        public string GetAllHandledHeader()
+        {
+            return JsonHandler.Encode(HeaderHandler.GetAllHandledHeader());
+        }
+
+        [WebMethod]
         public string GetAllUnhandledHeader()
         {
             return JsonHandler.Encode(HeaderHandler.GetAllUnhandledHeader());

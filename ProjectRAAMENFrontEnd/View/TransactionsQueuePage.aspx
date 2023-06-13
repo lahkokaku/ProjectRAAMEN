@@ -6,7 +6,7 @@
     <%if (UnhandledHeaderList.Count > 0)
         { %>
     <div>
-        <asp:GridView runat="server" ID="gvHeaderList" AutoGenerateColumns="False" OnRowUpdating="gvHeaderList_RowUpdating" border="1" CellPadding="4">
+        <asp:GridView runat="server" ID="gvUnhandledHeaderList" AutoGenerateColumns="False" OnRowUpdating="gvHeaderList_RowUpdating" BorderWidth="1" CellPadding="4">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Header ID" SortExpression="Id" />
                 <asp:BoundField DataField="CustomerId" HeaderText="Customer ID" ReadOnly="true" SortExpression="CustomerId" />
@@ -22,5 +22,25 @@
     <div>
         <p>All transactions handled!</p>
     </div>
+    <%} %>
+    <h2>Handled Transactions</h2>
+    <%if (HandledHeaderList.Count > 0)
+        { %>
+    <div>
+        <asp:GridView runat="server" ID="gvHandledHeaderList" AutoGenerateColumns="false" CellPadding="4" BorderWidth="1">
+            <Columns>
+                <asp:BoundField DataField="Id" HeaderText="Header ID" SortExpression="Id" />
+                <asp:BoundField DataField="CustomerId" HeaderText="Customer ID" ReadOnly="true" SortExpression="CustomerId" />
+                <asp:BoundField DataField="Date" HeaderText="Transaction Date" ReadOnly="True" SortExpression="Date" />
+                <asp:BoundField DataField="StaffId" HeaderText="Handled By (Staff ID)" ReadOnly="True" SortExpression="StaffId" />
+            </Columns>
+        </asp:GridView>
+    </div>
+    <%}
+        else
+        { %>
+    <div>
+        <p>No handled transactions yet</p>
+     </div>
     <%} %>
 </asp:Content>
