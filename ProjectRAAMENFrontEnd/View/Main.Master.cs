@@ -61,7 +61,7 @@ namespace ProjectRAAMENFrontEnd.View
 
         protected void btnOrderQueue_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/OrderQueuePage.aspx");
+            Response.Redirect("~/View/TransactionsQueuePage.aspx");
         }
 
         protected void btnReport_Click(object sender, EventArgs e)

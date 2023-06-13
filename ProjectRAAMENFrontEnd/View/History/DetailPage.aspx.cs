@@ -15,6 +15,8 @@ namespace ProjectRAAMENFrontEnd.View.History
         public static List<Detail> details;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (UserController.GetUserById((int)Session["user"]).RoleId == 2)
+                Response.Redirect("~/View/HomePage.aspx");
             if (Request.QueryString["id"].Equals(""))
             {
 
@@ -23,6 +25,11 @@ namespace ProjectRAAMENFrontEnd.View.History
             else id = Int32.Parse(Request.QueryString["id"]);
             details = DetailController.GetDetailById(id);
                 
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/View/History/HeaderPage.aspx");
         }
     }
 }

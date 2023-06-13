@@ -7,29 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectRAAMENFrontEnd.View.History
+namespace ProjectRAAMENFrontEnd.View
 {
 
 
-    public partial class HeaderPage
+    public partial class TransactionsQueuePage
     {
 
         /// <summary>
-        /// ListHeaderDivCustomer control.
+        /// gvHeaderList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ListHeaderDivCustomer;
+        protected global::System.Web.UI.WebControls.GridView gvHeaderList;
 
         /// <summary>
-        /// ListHeaderDivAdmin control.
+        /// lblMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ListHeaderDivAdmin;
+        protected global::System.Web.UI.WebControls.Label lblMessage;
     }
 }

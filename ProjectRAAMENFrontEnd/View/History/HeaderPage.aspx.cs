@@ -14,7 +14,20 @@ namespace ProjectRAAMENFrontEnd.View.History
         public static List<Header> ListHeader = new List<Header>();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ListHeader = HeaderController.GetAllHeader();
+            if (UserController.GetUserById((int)Session["user"]).RoleId == 2)
+                Response.Redirect("~/View/HomePage.aspx");
+
+            if (UserController.GetUserById((int)Session["user"]).RoleId == 1)
+            {
+                ListHeader = HeaderController.GetAllHeader();
+                ListHeaderDivAdmin.Visible = true;
+            }
+
+            if (UserController.GetUserById((int)Session["user"]).RoleId == 3)
+            {
+                ListHeader = HeaderController.GetAllHeaderByUserId((int)Session["user"]);
+                ListHeaderDivCustomer.Visible = true;
+            }
         }
 
     }

@@ -106,6 +106,12 @@ namespace ProjectRAAMEN
         }
 
         [WebMethod]
+        public string GetAllHeaderByUserId(int UserId)
+        {
+            return JsonHandler.Encode(HeaderHandler.GetAllHeaderByUserId(UserId));
+        }
+
+        [WebMethod]
         public string InsertDetail(int headerId, int ramenId, int quantity)
         {
             return JsonHandler.Encode(DetailHandler.InsertDetail(headerId, ramenId, quantity));
@@ -115,6 +121,18 @@ namespace ProjectRAAMEN
         public string GetDetailById (int id)
         {
             return JsonHandler.Encode(DetailHandler.GetDetailById(id));
+        }
+
+        [WebMethod]
+        public string GetAllUnhandledHeader()
+        {
+            return JsonHandler.Encode(HeaderHandler.GetAllUnhandledHeader());
+        }
+
+        [WebMethod]
+        public string HandleHeader(int Id, int StaffId)
+        {
+            return JsonHandler.Encode(HeaderHandler.HandleHeader(Id, StaffId));
         }
     }
 }
