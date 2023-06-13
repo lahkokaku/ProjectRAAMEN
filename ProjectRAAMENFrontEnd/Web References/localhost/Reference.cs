@@ -59,6 +59,8 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback InsertDetailOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetAllHeaderOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -141,6 +143,9 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event InsertDetailCompletedEventHandler InsertDetailCompleted;
+        
+        /// <remarks/>
+        public event GetAllHeaderCompletedEventHandler GetAllHeaderCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/InsertCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -612,6 +617,33 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllHeader", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllHeader() {
+            object[] results = this.Invoke("GetAllHeader", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllHeaderAsync() {
+            this.GetAllHeaderAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllHeaderAsync(object userState) {
+            if ((this.GetAllHeaderOperationCompleted == null)) {
+                this.GetAllHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllHeaderOperationCompleted);
+            }
+            this.InvokeAsync("GetAllHeader", new object[0], this.GetAllHeaderOperationCompleted, userState);
+        }
+        
+        private void OnGetAllHeaderOperationCompleted(object arg) {
+            if ((this.GetAllHeaderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllHeaderCompleted(this, new GetAllHeaderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -1007,6 +1039,32 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal InsertDetailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllHeaderCompletedEventHandler(object sender, GetAllHeaderCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllHeaderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllHeaderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

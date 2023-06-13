@@ -66,7 +66,7 @@ namespace ProjectRAAMENFrontEnd.View
 
         protected void btnReport_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/View/ReportPage.aspx");
+            Response.Redirect("~/View/Report/ReportPage.aspx");
         }
 
         protected void btnProfile_Click(object sender, EventArgs e)

@@ -16,5 +16,9 @@ namespace ProjectRAAMENFrontEnd.Controller
             return JsonHandler.Decode<Header>(WebService.InsertHeader(customerId,staffId,date));
         }
         
+        public static List<Header> GetAllHeader()
+        {
+            return JsonHandler.Decode<List<Header>>(WebService.GetAllHeader());
+        }
     }
 }

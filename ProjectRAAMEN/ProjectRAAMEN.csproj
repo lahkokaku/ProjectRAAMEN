@@ -143,6 +143,7 @@
     <Compile Include="Repository\HeaderRepository.cs" />
     <Compile Include="Repository\MeatRepository.cs" />
     <Compile Include="Repository\RamenRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Util\JsonHandler.cs" />
     <Compile Include="WebService.asmx.cs">

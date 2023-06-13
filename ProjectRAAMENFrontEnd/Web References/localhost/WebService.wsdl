@@ -217,6 +217,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllHeader">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="InsertCustomerSoapIn">
@@ -309,6 +319,12 @@
   <wsdl:message name="InsertDetailSoapOut">
     <wsdl:part name="parameters" element="tns:InsertDetailResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllHeaderResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="InsertCustomer">
       <wsdl:input message="tns:InsertCustomerSoapIn" />
@@ -369,6 +385,10 @@
     <wsdl:operation name="InsertDetail">
       <wsdl:input message="tns:InsertDetailSoapIn" />
       <wsdl:output message="tns:InsertDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHeader">
+      <wsdl:input message="tns:GetAllHeaderSoapIn" />
+      <wsdl:output message="tns:GetAllHeaderSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -508,6 +528,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllHeader">
+      <soap:operation soapAction="http://tempuri.org/GetAllHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -639,6 +668,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertDetail">
       <soap12:operation soapAction="http://tempuri.org/InsertDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHeader">
+      <soap12:operation soapAction="http://tempuri.org/GetAllHeader" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
