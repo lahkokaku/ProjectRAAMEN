@@ -16,7 +16,10 @@ namespace ProjectRAAMENFrontEnd.View.History
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.QueryString["id"].Equals(""))
+            {
+
                 Response.Redirect("~/View/History/HeaderPage.aspx");
+            }
             else id = Int32.Parse(Request.QueryString["id"]);
             details = DetailController.GetDetailById(id);
                 
