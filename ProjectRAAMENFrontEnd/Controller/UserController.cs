@@ -26,9 +26,9 @@ namespace ProjectRAAMENFrontEnd.Controller
                 return "Password and Confirm Password didn't match";
 
             if (Role == 3)
-                return WebService.InsertCustomer(Username, Email, Gender, Password);
+                return JsonHandler.Decode<string>(WebService.InsertCustomer(Username, Email, Gender, Password));
             if (Role == 2)
-                return WebService.InsertStaff(Username, Email, Gender, Password);
+                return JsonHandler.Decode<string>(WebService.InsertStaff(Username, Email, Gender, Password));
 
             return "Uncaught";
         }
