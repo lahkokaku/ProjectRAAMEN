@@ -26,13 +26,6 @@ namespace ProjectRAAMENFrontEnd.View.Manage_Ramen
             gvRamenList.DataBind();
         }
 
-        protected void btnDelete_Click(object sender, EventArgs e)
-        {
-            Button btn = (Button)sender;
-            lblRamenMessage.Text = btn.CommandArgument.ToString();
-            Response.Write(btn.CommandArgument.ToString());
-        }
-
         protected void btnCreateNewRamen_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/Manage_Ramen/ManageRamenInsertPage.aspx");

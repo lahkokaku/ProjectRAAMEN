@@ -94,7 +94,7 @@ namespace ProjectRAAMENFrontEnd.View
             }
             int headerId = insertHeader();
             insertDetail(quantity, allRamen, headerId);
-            labelMsg.Text = "Cart Succesfully Added";
+            labelMsg.Text = "Order placed!";
             clearCart();
 
         }

@@ -19,5 +19,20 @@ namespace ProjectRAAMEN.Handler
         {
             return HeaderRepository.GetAllHeader();
         }
+
+        public static List<Header> GetAllHeaderByUserId(int UserId)
+        {
+            return HeaderRepository.GetAllHeaderByUserId(UserId);
+        }
+
+        public static List<Header> GetAllUnhandledHeader()
+        {
+            return HeaderRepository.GetAllUndhadledHeader();
+        }
+
+        public static string HandleHeader(int Id, int StaffId)
+        {
+            return HeaderRepository.HandleHeader(Id, StaffId);
+        }
     }
 }

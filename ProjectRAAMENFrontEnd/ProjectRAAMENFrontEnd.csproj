@@ -118,6 +118,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\localhost\WebService.disco" />
+    <Content Include="View\TransactionsQueuePage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +243,13 @@
     </Compile>
     <Compile Include="View\RegisterPage.aspx.designer.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransactionsQueuePage.aspx.cs">
+      <DependentUpon>TransactionsQueuePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TransactionsQueuePage.aspx.designer.cs">
+      <DependentUpon>TransactionsQueuePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Web References\localhost\Reference.cs">
       <AutoGen>True</AutoGen>

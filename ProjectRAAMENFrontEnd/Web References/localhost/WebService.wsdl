@@ -211,6 +211,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllHeaderByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllHeaderByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllHeaderByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="InsertDetail">
         <s:complexType>
           <s:sequence>
@@ -238,6 +252,31 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="GetDetailByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUnhandledHeader">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUnhandledHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUnhandledHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandleHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StaffId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HandleHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HandleHeaderResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -333,6 +372,12 @@
   <wsdl:message name="GetAllHeaderSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllHeaderResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllHeaderByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllHeaderByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHeaderByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllHeaderByUserIdResponse" />
+  </wsdl:message>
   <wsdl:message name="InsertDetailSoapIn">
     <wsdl:part name="parameters" element="tns:InsertDetail" />
   </wsdl:message>
@@ -344,6 +389,18 @@
   </wsdl:message>
   <wsdl:message name="GetDetailByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnhandledHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUnhandledHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUnhandledHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUnhandledHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="HandleHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:HandleHeader" />
+  </wsdl:message>
+  <wsdl:message name="HandleHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:HandleHeaderResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceSoap">
     <wsdl:operation name="InsertCustomer">
@@ -406,6 +463,10 @@
       <wsdl:input message="tns:GetAllHeaderSoapIn" />
       <wsdl:output message="tns:GetAllHeaderSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllHeaderByUserId">
+      <wsdl:input message="tns:GetAllHeaderByUserIdSoapIn" />
+      <wsdl:output message="tns:GetAllHeaderByUserIdSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="InsertDetail">
       <wsdl:input message="tns:InsertDetailSoapIn" />
       <wsdl:output message="tns:InsertDetailSoapOut" />
@@ -413,6 +474,14 @@
     <wsdl:operation name="GetDetailById">
       <wsdl:input message="tns:GetDetailByIdSoapIn" />
       <wsdl:output message="tns:GetDetailByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnhandledHeader">
+      <wsdl:input message="tns:GetAllUnhandledHeaderSoapIn" />
+      <wsdl:output message="tns:GetAllUnhandledHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HandleHeader">
+      <wsdl:input message="tns:HandleHeaderSoapIn" />
+      <wsdl:output message="tns:HandleHeaderSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
@@ -552,6 +621,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllHeaderByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetAllHeaderByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertDetail">
       <soap:operation soapAction="http://tempuri.org/InsertDetail" style="document" />
       <wsdl:input>
@@ -563,6 +641,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetDetailById">
       <soap:operation soapAction="http://tempuri.org/GetDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnhandledHeader">
+      <soap:operation soapAction="http://tempuri.org/GetAllUnhandledHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandleHeader">
+      <soap:operation soapAction="http://tempuri.org/HandleHeader" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -708,6 +804,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllHeaderByUserId">
+      <soap12:operation soapAction="http://tempuri.org/GetAllHeaderByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="InsertDetail">
       <soap12:operation soapAction="http://tempuri.org/InsertDetail" style="document" />
       <wsdl:input>
@@ -719,6 +824,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetDetailById">
       <soap12:operation soapAction="http://tempuri.org/GetDetailById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUnhandledHeader">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUnhandledHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HandleHeader">
+      <soap12:operation soapAction="http://tempuri.org/HandleHeader" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

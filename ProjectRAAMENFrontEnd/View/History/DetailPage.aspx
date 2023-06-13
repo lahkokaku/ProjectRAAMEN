@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <br />
+    <asp:Button Text="Back" ID="btnBack" runat="server" OnClick="btnBack_Click" />
+    <br />
+    <br />
     <div>
         <table border="1"  cellpadding="4">
             <thead>
