@@ -28,7 +28,12 @@ namespace ProjectRAAMEN.Repository
             return (from i in db.Headers where i.User.Id == UserId select i).ToList();
         }
 
-        public static List<Header> GetAllUndhadledHeader()
+        public static List<Header> GetAllHandledHeader()
+        {
+            return (from i in db.Headers where i.StaffId != 0 select i).ToList();
+        }
+
+        public static List<Header> GetAllUnhandledHeader()
         {
             return (from i in db.Headers where i.StaffId == 0 select i).ToList();
         }

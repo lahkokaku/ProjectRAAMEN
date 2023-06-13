@@ -65,6 +65,8 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         private System.Threading.SendOrPostCallback GetDetailByIdOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetAllHandledHeaderOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetAllUnhandledHeaderOperationCompleted;
         
         private System.Threading.SendOrPostCallback HandleHeaderOperationCompleted;
@@ -160,6 +162,9 @@ namespace ProjectRAAMENFrontEnd.localhost {
         
         /// <remarks/>
         public event GetDetailByIdCompletedEventHandler GetDetailByIdCompleted;
+        
+        /// <remarks/>
+        public event GetAllHandledHeaderCompletedEventHandler GetAllHandledHeaderCompleted;
         
         /// <remarks/>
         public event GetAllUnhandledHeaderCompletedEventHandler GetAllUnhandledHeaderCompleted;
@@ -722,6 +727,33 @@ namespace ProjectRAAMENFrontEnd.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllHandledHeader", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string GetAllHandledHeader() {
+            object[] results = this.Invoke("GetAllHandledHeader", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetAllHandledHeaderAsync() {
+            this.GetAllHandledHeaderAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetAllHandledHeaderAsync(object userState) {
+            if ((this.GetAllHandledHeaderOperationCompleted == null)) {
+                this.GetAllHandledHeaderOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetAllHandledHeaderOperationCompleted);
+            }
+            this.InvokeAsync("GetAllHandledHeader", new object[0], this.GetAllHandledHeaderOperationCompleted, userState);
+        }
+        
+        private void OnGetAllHandledHeaderOperationCompleted(object arg) {
+            if ((this.GetAllHandledHeaderCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetAllHandledHeaderCompleted(this, new GetAllHandledHeaderCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetAllUnhandledHeader", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public string GetAllUnhandledHeader() {
             object[] results = this.Invoke("GetAllUnhandledHeader", new object[0]);
@@ -1253,6 +1285,32 @@ namespace ProjectRAAMENFrontEnd.localhost {
         private object[] results;
         
         internal GetDetailByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    public delegate void GetAllHandledHeaderCompletedEventHandler(object sender, GetAllHandledHeaderCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.9032.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetAllHandledHeaderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetAllHandledHeaderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

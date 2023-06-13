@@ -26,6 +26,11 @@ namespace ProjectRAAMENFrontEnd.Controller
             return JsonHandler.Decode<List<Header>>(WebService.GetAllHeaderByUserId(UserId));
         }
 
+        public static List<Header> GetAllHandledHeader()
+        {
+            return JsonHandler.Decode<List<Header>>(WebService.GetAllHandledHeader());
+        }
+
         public static List<Header> GetAllUnhandledHeader()
         {
             return JsonHandler.Decode<List<Header>>(WebService.GetAllUnhandledHeader());

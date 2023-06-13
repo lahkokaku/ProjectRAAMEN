@@ -15,13 +15,13 @@ namespace ProjectRAAMENFrontEnd.View
     {
 
         /// <summary>
-        /// gvHeaderList control.
+        /// gvUnhandledHeaderList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvHeaderList;
+        protected global::System.Web.UI.WebControls.GridView gvUnhandledHeaderList;
 
         /// <summary>
         /// lblMessage control.
@@ -31,5 +31,14 @@ namespace ProjectRAAMENFrontEnd.View
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        /// <summary>
+        /// gvHandledHeaderList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvHandledHeaderList;
     }
 }

@@ -255,6 +255,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllHandledHeader">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllHandledHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllHandledHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetAllUnhandledHeader">
         <s:complexType />
       </s:element>
@@ -390,6 +400,12 @@
   <wsdl:message name="GetDetailByIdSoapOut">
     <wsdl:part name="parameters" element="tns:GetDetailByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllHandledHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllHandledHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllHandledHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllHandledHeaderResponse" />
+  </wsdl:message>
   <wsdl:message name="GetAllUnhandledHeaderSoapIn">
     <wsdl:part name="parameters" element="tns:GetAllUnhandledHeader" />
   </wsdl:message>
@@ -474,6 +490,10 @@
     <wsdl:operation name="GetDetailById">
       <wsdl:input message="tns:GetDetailByIdSoapIn" />
       <wsdl:output message="tns:GetDetailByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHandledHeader">
+      <wsdl:input message="tns:GetAllHandledHeaderSoapIn" />
+      <wsdl:output message="tns:GetAllHandledHeaderSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetAllUnhandledHeader">
       <wsdl:input message="tns:GetAllUnhandledHeaderSoapIn" />
@@ -641,6 +661,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDetailById">
       <soap:operation soapAction="http://tempuri.org/GetDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHandledHeader">
+      <soap:operation soapAction="http://tempuri.org/GetAllHandledHeader" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -824,6 +853,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetDetailById">
       <soap12:operation soapAction="http://tempuri.org/GetDetailById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllHandledHeader">
+      <soap12:operation soapAction="http://tempuri.org/GetAllHandledHeader" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
