@@ -29,6 +29,7 @@ namespace ProjectRAAMENFrontEnd.View.Manage_Ramen
         protected void btnCreateNewRamen_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/View/Manage_Ramen/ManageRamenInsertPage.aspx");
+            RefreshRamenList();
         }
 
         protected void gvRamenList_RowEditing(object sender, GridViewEditEventArgs e)
@@ -36,6 +37,7 @@ namespace ProjectRAAMENFrontEnd.View.Manage_Ramen
             GridViewRow Row = gvRamenList.Rows[e.NewEditIndex];
             string Id = Row.Cells[0].Text.ToString();
             Response.Redirect("~/View/Manage_Ramen/ManageRamenUpdatePage.aspx?Id="+ Id);
+            RefreshRamenList();
         }
 
         protected void gvRamenList_RowDeleting(object sender, GridViewDeleteEventArgs e)
