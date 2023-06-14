@@ -11,11 +11,21 @@ namespace ProjectRAAMEN.Handler
     {
         public static string InsertCustomer(String Username, String Email, String Gender, String Password)
         {
+            if (UserRepository.GetUserByUsername(Username) != null)
+                return "Username taken";
+            if (UserRepository.GetUserByEmail(Email) != null)
+                return "Email taken";
+
             UserRepository.InsertCustomer(Username, Email, Gender, Password);
             return "Success. Please Login using the credentials";
         }
         public static string InsertStaff(String Username, String Email, String Gender, String Password)
         {
+            if (UserRepository.GetUserByUsername(Username) != null)
+                return "Username taken";
+            if (UserRepository.GetUserByEmail(Email) != null)
+                return "Email taken";
+
             UserRepository.InsertStaff(Username, Email, Gender, Password);
             return "Success. Please Login using the credentials";
         }
