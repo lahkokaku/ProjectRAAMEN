@@ -5,6 +5,7 @@ using ProjectRAAMENFrontEnd.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace ProjectRAAMENFrontEnd.Controller
@@ -17,11 +18,22 @@ namespace ProjectRAAMENFrontEnd.Controller
             if (Username.Length < 5 || Username.Length > 15)
                 return "Username's lenght must be between 5 and 15 characters";
             if (!Username.Any(Char.IsLetter) || !Username.Any(Char.IsWhiteSpace))
-                return "Username must consists of Alphabet and Space only";
+                return "Username must and can only consists of Alphabet and Space only";
+            
+            foreach(char c in Username)
+            {
+                if (!Char.IsLetter(c) && !Char.IsWhiteSpace(c))
+                    return "Username must and can only consists of Alphabet and Space only";
+                else
+                    continue;
+            }
+
             if (!Email.EndsWith(".com"))
                 return "Email must end with '.com'";
             if (Gender.Equals("Unselected"))
                 return "Gender must be selected";
+            if (Password.Equals(""))
+                return "Password must be filled";
             if (!Password.Equals(ConfirmPassword))
                 return "Password and Confirm Password didn't match";
 

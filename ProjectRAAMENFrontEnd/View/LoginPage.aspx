@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
         <div>
             <div>
+                <span>
+                        <b>RAAMEN</b> |
+                    </span>
                 <a href="./LoginPage.aspx">Login</a> | <a href="./RegisterPage.aspx">Register</a>
             </div>
             <div>

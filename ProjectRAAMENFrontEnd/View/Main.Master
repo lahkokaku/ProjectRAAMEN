@@ -14,6 +14,9 @@
             <div style="display: flex; justify-content: space-between">
                 <span>
                     <span>
+                        <b>RAAMEN</b> |
+                    </span>
+                    <span>
                         <asp:Button Text="Home" runat="server" ID="btnHome" OnClick="btnHome_Click" /> | 
                     </span>
                     <span id="navbarCustomer" runat="server" >

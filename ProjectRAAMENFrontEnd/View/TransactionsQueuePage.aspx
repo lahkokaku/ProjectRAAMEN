@@ -32,7 +32,7 @@
                 <asp:BoundField DataField="Id" HeaderText="Header ID" SortExpression="Id" />
                 <asp:BoundField DataField="CustomerId" HeaderText="Customer ID" ReadOnly="true" SortExpression="CustomerId" />
                 <asp:BoundField DataField="Date" HeaderText="Transaction Date" ReadOnly="True" SortExpression="Date" />
-                <asp:BoundField DataField="StaffId" HeaderText="Handled By (Staff ID)" ReadOnly="True" SortExpression="StaffId" />
+                <asp:BoundField DataField="StaffId" HeaderText="Handled By (Staff / Admin ID)" ReadOnly="True" SortExpression="StaffId" />
             </Columns>
         </asp:GridView>
     </div>

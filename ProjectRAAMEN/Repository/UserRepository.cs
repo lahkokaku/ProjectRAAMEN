@@ -38,6 +38,22 @@ namespace ProjectRAAMEN.Repository
             return SelectedUser;
         }
 
+        public static User GetUserByUsername(string Username)
+        {
+            User SelectedUser = (from i in db.Users
+                                 where i.Username.Equals(Username) 
+                                 select i).FirstOrDefault();
+            return SelectedUser;
+        }
+
+        public static User GetUserByEmail(string Email)
+        {
+            User SelectedUser = (from i in db.Users
+                                 where i.Email.Equals(Email)
+                                 select i).FirstOrDefault();
+            return SelectedUser;
+        }
+
         public static String UpdateUserProfile(String Username, String Email, String Gender, int Id)
         {
             User SelectedUser = (from i in db.Users where i.Id == Id select i).FirstOrDefault();
